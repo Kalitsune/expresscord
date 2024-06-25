@@ -8,6 +8,13 @@ Expresscord is a website that provides various way to express yourself on discor
 ## Getting started
 As the project is currently under development, there is no official way of deploying it. However, once it's done you'll be able to deploy it using docker.
 
+### Environment
+| Name        | Description                           | Default                           |
+|-------------|---------------------------------------|-----------------------------------|
+| `ADDRESS`   | The address to bind the webserver to. | `127.0.0.1`                       |
+| `PORT`      | The port to open the webserver on.    | `8080`                            |
+| `RUST_LOG`  | Used to define the log level.         | `expresscord=info,actix_web=info` |
+
 ## Development
 ### Testing changes
 Make sure you have rust installed and use
