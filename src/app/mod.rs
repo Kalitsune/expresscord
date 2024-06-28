@@ -1,3 +1,4 @@
+mod middleware;
 mod routes;
 
 use std::env;
@@ -33,6 +34,7 @@ pub async fn start() -> std::io::Result<()> {
 fn routes(app: &mut web::ServiceConfig) {
     app
         .service(web::resource("pet/{discord_id}")
+            .wrap(middleware::profile_fetcher::ProfileFetcher)
             .route(web::get().to(routes::pet::get))
         );
 }
