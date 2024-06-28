@@ -1,10 +1,8 @@
+mod routes;
+
 use std::env;
 use log;
-use actix_web::{
-    HttpServer,
-    App,
-    middleware::Logger
-};
+use actix_web::{HttpServer, App, middleware::Logger, web};
 
 use actix_web::{get, HttpResponse, Responder};
 use log::info;
@@ -25,9 +23,16 @@ pub async fn start() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .wrap(Logger::default())
-            .service(hello)
+            .configure(routes)
     })
         .bind((address, port))?
         .run()
         .await
+}
+
+fn routes(app: &mut web::ServiceConfig) {
+    app
+        .service(web::resource("pet/{discord_id}")
+            .route(web::get().to(routes::pet::get))
+        );
 }
