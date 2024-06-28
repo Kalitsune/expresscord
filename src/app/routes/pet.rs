@@ -3,7 +3,7 @@ use serde::Deserialize;
 
 #[derive(Deserialize)]
 pub struct Params {
-    discord_id: u64,
+    discord_id: u32,
 }
 pub async fn get(path: web::Path<Params>) -> impl Responder {
     HttpResponse::Ok().body(format!("Hello, your id is: {}", path.discord_id))

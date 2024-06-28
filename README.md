@@ -9,11 +9,12 @@ Expresscord is a website that provides various way to express yourself on discor
 As the project is currently under development, there is no official way of deploying it. However, once it's done you'll be able to deploy it using docker.
 
 ### Environment
-| Name        | Description                           | Default                           |
-|-------------|---------------------------------------|-----------------------------------|
-| `ADDRESS`   | The address to bind the webserver to. | `127.0.0.1`                       |
-| `PORT`      | The port to open the webserver on.    | `8080`                            |
-| `RUST_LOG`  | Used to define the log level.         | `expresscord=info,actix_web=info` |
+| Name           | Description                                                                                     | Default                           |
+|----------------|-------------------------------------------------------------------------------------------------|-----------------------------------|
+| `ADDRESS`      | The address to bind the webserver to.                                                           | `127.0.0.1`                       |
+| `PORT`         | The port to open the webserver on.                                                              | `8080`                            |
+| `RUST_LOG`     | Used to define the log level.                                                                   | `expresscord=info,actix_web=info` |
+| `DISCORD_TOKEN | The token of a discord bot (see [developer portal](https://discord.com/developers/applications) | None                              |
 
 ## Development
 ### Testing changes

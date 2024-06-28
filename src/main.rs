@@ -1,4 +1,5 @@
 mod app;
+mod discord;
 
 use std::env;
 
@@ -10,6 +11,9 @@ async fn main() {
 
     // init logs
     env_logger::init();
+
+    // validate the discord token
+    discord::validate_discord_token().await;
 
     // start the webserver
     app::start().await.expect("TODO: panic message");
